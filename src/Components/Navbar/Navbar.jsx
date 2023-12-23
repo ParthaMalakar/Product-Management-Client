@@ -24,7 +24,7 @@ const Navbar = () => {
                     </div>
                     <div className="md:flex justify-center items-center">
 
-                        <a className="  normal-case text-2xl md:text-2xl font-bold text-rose-500 ml-5 "><i>TaskFlow</i></a>
+                        <a className="  normal-case text-4xl md:text-2xl font-bold text-rose-500 ml-5 "><i>ProManage</i></a>
 
                     </div>
                 </div>
