@@ -9,9 +9,13 @@ const ProductPage = () => {
             .then(data => setCategories(data))
     }, [])
     return (
-        <div>
-            <section className="user-benefits-section max-w-6xl mx-auto mb-4">
-                <h2 className='text-center mt-9 font-bold text-3xl'>Product Page</h2>
+        <div className='bg-cyan-100'>
+            <section className="user-benefits-section max-w-6xl mx-auto pb-4">
+                <h2 className="text-center pt-6 font-bold text-4xl text-blue-700">
+                    <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
+                       All Products 
+                    </span>
+                </h2>
                 <div className="user-categories grid grid-cols-1 md:grid-cols-3 gap-7 mt-8">
                     {categories.map((category, index) => (
                         <Product key={index} category={category}></Product>
