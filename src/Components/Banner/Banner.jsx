@@ -15,7 +15,7 @@ const Banner = () => {
                     backgroundSize: 'cover',
 
                     backgroundPosition: 'center',
-                    backgroundAttachment:'fixed',
+                    backgroundAttachment: 'fixed',
 
                     backgroundRepeat: 'no-repeat',
 
@@ -24,18 +24,18 @@ const Banner = () => {
                     height: '610px',
 
                 }}>
-                    
-                <div className='md:flex gap-10'>
-                 <div className="max-w-[500px] mt-6 space-y-3">
-        <h3 className="text-4xl  font-bold">Streamline Your Success with ProManage</h3>
-        <p className='p-1'>Welcome to TaskFlow Pro, where seamless task management meets collaborative efficiency. Empower your team, streamline your workflow, and achieve more together. Let's explore the future of productivity!</p>
-    
-        </div>
-        <div>
-        <img className='h-[250px] ml-24 md:ml-0 mt-10 md:mt-0 md:h-[300px]  md:rounded-b-lg rounded-2xl ' src="https://i.ibb.co/9nC4rjS/1165206-128645-ORKO36-68.jpg" alt="" />
-        </div>
-        </div>
-</div>
+
+                    <div className='md:flex gap-10'>
+                        <div className="max-w-[500px] mt-6 space-y-3">
+                            <h3 className="text-2xl md:text-4xl  font-bold">Streamline Your Success with ProManage</h3>
+                            <p className='p-1'>Welcome to TaskFlow Pro, where seamless task management meets collaborative efficiency. Empower your team, streamline your workflow, and achieve more together. Let's explore the future of productivity!</p>
+
+                        </div>
+                        <div>
+                            <img className='h-[250px] ml-14 md:ml-0 mt-10 md:mt-0 md:h-[300px]  md:rounded-b-lg rounded-2xl ' src="https://i.ibb.co/9nC4rjS/1165206-128645-ORKO36-68.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
