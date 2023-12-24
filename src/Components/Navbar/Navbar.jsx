@@ -9,7 +9,10 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink className="font-semibold text-lg" to="/">Home</NavLink></li>
         <li><NavLink className="font-semibold text-lg" to="/product">Product Page</NavLink></li>
+       {
+        user && <li><NavLink className="font-semibold text-lg" to="/product">My Cart</NavLink></li>
 
+       }
 
     </>
     const handleSignOut = () => {
