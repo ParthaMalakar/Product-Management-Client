@@ -30,7 +30,7 @@ const Product = ({ category }) => {
                     </div>
                     <p style={text} className="font-semibold pt-5 pb-2 text-center text-lg">{category.title}</p>
                 </div>
-                <div className=''><Link className='btn btn-block text-center'>Details</Link></div>
+                <div className=''><Link to={`/details/${category._id}`} className='btn btn-block text-center'>Details</Link></div>
 
             </div>
         </div>
