@@ -1,8 +1,13 @@
-import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../provider/Authprovider';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
     const product = useLoaderData();
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const { _id, image, title, variations, category_bg_color, card_bg_color, text_button_bg_color } = product;
     const style = {
         backgroundColor: `${card_bg_color}`
@@ -16,6 +21,45 @@ const ProductDetails = () => {
     }
     const text = {
         color: `${text_button_bg_color}`
+    }
+    const handleAdd =()=>{
+
+        if(user){
+            const productInfo = {
+
+                image: image,
+                email: user.email,
+                title: title,
+                variations: variations
+                
+
+            }
+            console.log(productInfo)
+
+            fetch('http://localhost:5000/products', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(productInfo)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        console.log('Product added to the database')
+                        Swal.fire(
+                            'Product Add your cart',
+                            'You clicked the button!',
+                            'success'
+                        )
+                    }
+                })
+
+            
+        }
+        else{
+navigate('/login')
+        }
     }
     return (
         <div>
@@ -35,7 +79,7 @@ const ProductDetails = () => {
                         <p style={text} className="font-semibold pt-5  text-center text-lg">{title}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={`/ordering/${_id}`} className="btn btn-primary flex-grow">Add to Cart</Link>
+                        <Link onClick={handleAdd} className="btn btn-primary flex-grow">Add to Cart</Link>
 
                     </div>
 
