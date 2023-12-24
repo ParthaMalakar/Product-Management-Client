@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/Authprovider";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
 
     const navLinks = <>
         <li><NavLink className="font-semibold text-lg" to="/">Home</NavLink></li>
@@ -9,7 +12,17 @@ const Navbar = () => {
 
 
     </>
-
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire(
+                    'Logout success!',
+                    'You clicked the button!',
+                    'success'
+                )
+            })
+            .catch()
+    }
     return (
         <div>
             <div className="navbar bg-slate-300 ">
@@ -37,8 +50,20 @@ const Navbar = () => {
 
 
                     {
+                        user ? <div className=" md:flex items-center ">
+                            <div className="dropdown">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle">
+                                    <img className="ml-40 md:ml-0 md:w-[40px] h-11 md:h-9 rounded-full" src={user.photoURL} alt="" />
+                                </label>
 
-                        <Link to="/login" className="py-2 px-6 rounded-lg  bg-slate-600 text-white text-lg font-semibold mr-10">Login</Link>
+                            </div>
+                            <p>UserName:{user.displayName}</p>
+
+                            <button onClick={handleSignOut} className="btn ml-20 md:ml-0">Sign Out</button>
+                        </div>
+
+                            :
+                            <Link to="/login" className="py-2 px-6 rounded-lg  bg-slate-600 text-white text-lg font-semibold mr-10">Login</Link>
                     }
 
                 </div>
