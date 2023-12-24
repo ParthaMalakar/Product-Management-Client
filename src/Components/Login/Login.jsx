@@ -10,7 +10,11 @@ const Login = () => {
         <div>
              
             <div className="pt-8 bg-[#283d4426]">
-                <h2 className="text-3xl my-10 text-center pt-10 font-bold">Please Login</h2>
+            <h2 className="text-center my-6  pt-8  font-bold text-4xl text-blue-700">
+                    <span className="text-3xl  font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
+                    Please Login
+                    </span>
+                </h2>
                 <form  className=" md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">
